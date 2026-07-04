@@ -1,0 +1,36 @@
+<svg width="1200" height="1400" viewBox="0 0 1200 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1400" rx="60" fill="#0B0C10"/>
+  <rect x="70" y="70" width="1060" height="1260" rx="44" fill="url(#bg)"/>
+  <circle cx="928" cy="310" r="220" fill="#D7A17A" fill-opacity="0.2"/>
+  <circle cx="300" cy="1160" r="260" fill="#A855F7" fill-opacity="0.16"/>
+  <rect x="250" y="270" width="700" height="820" rx="56" fill="#111827"/>
+  <rect x="302" y="330" width="596" height="560" rx="40" fill="#F7EFE9"/>
+  <rect x="336" y="364" width="244" height="198" rx="24" fill="#0F172A"/>
+  <rect x="602" y="364" width="242" height="198" rx="24" fill="#0F172A"/>
+  <rect x="336" y="590" width="508" height="116" rx="24" fill="#E2D7CD"/>
+  <rect x="352" y="612" width="120" height="72" rx="16" fill="#111827"/>
+  <rect x="490" y="612" width="126" height="72" rx="16" fill="#111827"/>
+  <rect x="634" y="612" width="186" height="72" rx="16" fill="#111827"/>
+  <rect x="336" y="732" width="508" height="118" rx="28" fill="#0F172A"/>
+  <rect x="354" y="754" width="180" height="70" rx="18" fill="#F7EFE9"/>
+  <rect x="548" y="754" width="154" height="70" rx="18" fill="#F7EFE9"/>
+  <rect x="714" y="754" width="106" height="70" rx="18" fill="#F7EFE9"/>
+  <rect x="332" y="900" width="516" height="122" rx="28" fill="#E2D7CD"/>
+  <rect x="360" y="924" width="462" height="72" rx="22" fill="#111827"/>
+  <path d="M332 242C332 198 366 164 410 164H608C652 164 686 198 686 242V282H332V242Z" fill="#F1C08B"/>
+  <path d="M316 210L382 160" stroke="#F1C08B" stroke-width="18" stroke-linecap="round"/>
+  <path d="M360 190L392 148" stroke="#F1C08B" stroke-width="16" stroke-linecap="round"/>
+  <path d="M620 184L694 142" stroke="#F1C08B" stroke-width="16" stroke-linecap="round"/>
+  <path d="M650 184L706 160" stroke="#F1C08B" stroke-width="16" stroke-linecap="round"/>
+  <path d="M292 1006H860" stroke="#F7EFE9" stroke-width="12" stroke-linecap="round"/>
+  <path d="M292 1062H860" stroke="#F7EFE9" stroke-width="12" stroke-linecap="round"/>
+  <path d="M292 1118H860" stroke="#F7EFE9" stroke-width="12" stroke-linecap="round"/>
+  <path d="M292 1174H860" stroke="#F7EFE9" stroke-width="12" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bg" x1="210" y1="152" x2="958" y2="1260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A2332"/>
+      <stop offset="0.55" stop-color="#111827"/>
+      <stop offset="1" stop-color="#1F2937"/>
+    </linearGradient>
+  </defs>
+</svg>

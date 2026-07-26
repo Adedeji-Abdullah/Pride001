@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <header className="relative z-[99] mx-auto flex w-full items-center justify-between px-6 py-7">
+    <header className="fixed inset-x-0 text-white top-0 z-[99] mx-auto flex w-full items-center justify-between bg-black/90 px-6 py-7 shadow-md backdrop-blur-sm">
       <div>
         <p>Pride Garment</p>
       </div>

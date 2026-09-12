@@ -39,7 +39,7 @@ const spreads = [
 const LookBook = () => {
   return (
     <section className="bg-[#faf7f4] py-24 text-slate-900">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-6 mb-24">
         <div className="mb-12 text-center">
           <p className="text-sm uppercase tracking-[0.35em] text-gray-500">Lookbook</p>
           <h2 className="mt-4 text-4xl font-semibold sm:text-5xl">Muslim Dress Book</h2>
@@ -112,11 +112,12 @@ const LookBook = () => {
               </div>
               <button className="mt-6 w-full pointer-events-auto cursor-pointer rounded-3xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
                 {item.shop}
-              </button>
-            </article>
+              </button>             
+            </article>          
           ))}
         </div>
       </div>
+      <button className='rounded-2xl backdrop-blur-3xl bg-transparent border px-4 hover:text-white hover:bg-slate-900 flex justify-center items-center self-center mx-auto py-1 text-slate-900'>Show details  ●→</button>
     </section>
   );
 };

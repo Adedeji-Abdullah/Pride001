@@ -75,6 +75,15 @@ app.post("/upload", upload.single("cloth"), async (req, res) => {
 app.get("/", (req, res) => {
   res.json("Hello world");
 });
+
+app.get('/clothings', async (req, res) => {
+  const fetchingCloths = await Cloth.find()
+  // const result = fetchingCloths.json()
+  res.json(fetchingCloths)
+  console.log(fetchingCloths)
+})
+
+
 const port = process.env.PORT;
 app.listen(port, async () => {
   try {

@@ -40,8 +40,9 @@ export default function Page() {
         // Set up the starting active image tracking maps for each card
         const initialImages: { [key: string]: string } = {};
         result.forEach((item: any) => {
-          if (item.images && item.images.length > 0) {
-            initialImages[item._id] = item.images[0].url;
+          if (item.clothImgURL && item.clothImgURL.length > 0) {
+            initialImages[item.clothImgURL] = item.clothImgURL;
+            console.log(item.clothImgURL)
           } else if (item.clothImgURL) {
             initialImages[item._id] = item.clothImgURL;
           }
@@ -79,7 +80,7 @@ export default function Page() {
           </span>
           <p className="text-zinc-600 text-xs mb-4">{error}</p>
           <p className="text-zinc-400 text-[11px]">
-            Make sure your server is running on port 5000 and CORS is enabled.
+            Make sure your server is running on a port and CORS is enabled.
           </p>
         </div>
       </div>
@@ -95,7 +96,7 @@ export default function Page() {
       {/* Grid wrapper handling multiple mapping results from backend */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
         {cloths.map((product: any) => {
-          const currentImage = activeImages[product._id] || product.clothImgURL;
+          const currentImage = activeImages[product._id];
           const currentSize = selectedSizes[product._id] || "";
           const currentColor = selectedColors[product._id] || "";
 
@@ -106,13 +107,14 @@ export default function Page() {
             >
               {/* Product Visual Container Box */}
               <div className="relative aspect-[4/5] bg-zinc-100 w-full group">
-                {currentImage && (
+                {/* {currentImage && (
                   <img
                     src={currentImage}
+                    onClick={() => console.log(currentImage)}
                     alt={product.title || product.style}
                     className="w-full h-full object-cover object-center"
                   />
-                )}
+                )} */}
 
                 {/* Style Collection Label Category Tag */}
                 <span className="absolute top-3 left-3 bg-zinc-900/90 text-white font-medium text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-md backdrop-blur-sm">
@@ -120,9 +122,9 @@ export default function Page() {
                 </span>
 
                 {/* Sub-image Overlay Track Selector */}
-                {product.images && product.images.length > 0 && (
+                {product.clothImgURL && product.clothImgURL.length > 0 && (
                   <div className="absolute bottom-3 right-3 flex gap-1 bg-black/20 p-1 rounded-md backdrop-blur-md">
-                    {product.images.map((img: any, idx: number) => (
+                    {/* {product.images.map((img: any, idx: number) => (
                       <button
                         key={idx}
                         onClick={() =>
@@ -138,12 +140,17 @@ export default function Page() {
                         }`}
                       >
                         <img
-                          src={img.url}
+                          src={product.clothImgURL || img.url}
                           alt=""
                           className="w-full h-full object-cover"
                         />
                       </button>
-                    ))}
+                    ))} */}
+                    <img
+                          src={product.clothImgURL}
+                          alt=""
+                          className="w-full h-full object-cover"
+                        />
                   </div>
                 )}
               </div>
@@ -157,7 +164,7 @@ export default function Page() {
                       {product.title || product.style || "Unnamed Variant"}
                     </h2>
                     <span className="text-base font-black text-zinc-900 whitespace-nowrap">
-                      \$
+                      #
                       {Number(product.price || product.amount || 0).toFixed(2)}
                     </span>
                   </div>
@@ -212,7 +219,7 @@ export default function Page() {
                     </div>
                   </div>
                 )}
-
+                <button className="px-1 rounded-md cursor-pointer py-1 bg-gray-300">Buy</button>
                 {/* Conditional Sizing Box Elements Map Arrays */}
                 {product.sizes && product.sizes.length > 0 && (
                   <div>

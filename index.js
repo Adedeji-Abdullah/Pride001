@@ -24,10 +24,10 @@ app.use(
     origin: "http://localhost:3000",
   }),
 );
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
 // Ensure upload directory exists
-const uploadDir = "./upload/clothes"
+const uploadDir = "./public/upload"
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
@@ -54,12 +54,13 @@ app.post("/upload", upload.single("cloth"), async (req, res) => {
   const cloth = {
     style: clothInfo.style,
     amount: clothInfo.amount,
+    description: clothInfo.description
   };
 
   try {
     if (req.file) {
       cloth.clothImg = clothImg.filename;
-      cloth.clothImgURL = `/uploads/cloths/${req.file.filename}`;
+      cloth.clothImgURL = `/upload/${req.file.filename}`;
     }
     console.log(cloth);
     console.log("clothImg " + clothImg);

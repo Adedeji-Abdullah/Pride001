@@ -4,7 +4,8 @@ const clothSchema = mongoose.Schema({
   style: String,
   amount: String,
   clothImg: String,
-  clothImgURL: String
+  clothImgURL: String,
+  description: String
 }
 )
 

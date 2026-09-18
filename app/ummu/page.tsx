@@ -6,6 +6,7 @@ const page = () => {
     const [file, setFile] = useState<any>()
     const [file2, setFile2] = useState<any>()
     const [style, setStyle] = useState("")
+    const [description, setDescription] = useState("")
     const [amount, setAmount] = useState<number | any>(0)
     
     const submit = async() => {
@@ -13,6 +14,7 @@ const page = () => {
     formData.append('cloth', file)
     formData.append('style', style)
     formData.append('amount', amount)
+    formData.append('description', description)
         const upload = await fetch("http://localhost:5000/upload", {
             method: 'POST',
             body: formData
@@ -42,6 +44,7 @@ console.log(photo)
             {file2 &&  (
                 <img src={file2} className='w-32 h-32 rounded-full object-cover mx-auto mt-12' alt="" />
             )}
+            <textarea value={description} name="" onChange={(e: React.FormEvent) => setDescription(e.target.value)} className='md:w-1/3 w-3/4 flex items-center rounded-2xl border border-slate-600 h-24 pl-2 justify-center mx-auto mt-5' placeholder='description' id=""></textarea>
             <button onClick={submit} className='px-5 py-1 bg-slate-900 cursor-pointer text-white text-2xl rounded-2xl flex justify-center mt-10 items-center mx-auto'>upload</button>
         </div>
     </section>

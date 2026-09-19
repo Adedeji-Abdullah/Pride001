@@ -26,7 +26,7 @@ export default function Page() {
       try {
         setLoading(true);
         // Hardcoded target URL as specified
-        const response = await fetch("http://localhost:5000/clothings");
+        const response = await fetch("https://pride001-1.onrender.com/clothings");
 
         if (!response.ok) {
           throw new Error(

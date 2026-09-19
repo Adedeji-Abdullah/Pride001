@@ -21,7 +21,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://pride-garment.vercel.app", "https://pride001-1.onrender.com"],
   }),
 );
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));

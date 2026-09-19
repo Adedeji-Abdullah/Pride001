@@ -19,7 +19,7 @@ const page = () => {
     formData.append("style", style);
     formData.append("amount", amount);
     formData.append("description", description);
-    const upload = await fetch("http://localhost:5000/upload", {
+    const upload = await fetch("https://pride001-1.onrender.com/upload", {
       method: "POST",
       body: formData,
     });

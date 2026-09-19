@@ -43,7 +43,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({
-  storage: storage,
+  storage: storage
 });
 
 app.post("/upload", upload.single("cloth"), async (req, res) => {
